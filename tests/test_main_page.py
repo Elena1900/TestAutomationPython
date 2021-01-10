@@ -64,7 +64,6 @@ def test_guest_can_go_to_login_page_from_product_page(browser):
     login.should_be_login_page()
 
 
-@pytest.mark.need_review
 def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     link = "http://selenium1py.pythonanywhere.com/en-gb/"
     page = ProductPage(browser, link)
@@ -116,7 +115,7 @@ class TestUserAddToBasketFromProductPage():
         self.product_page.should_be_book_name()
         self.product_page.should_be_book_price()    
 
-
+    @pytest.mark.skip
     def test_user_can_see_success_message(self, browser):
         link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
         self.product_page = ProductPage(browser, link)
